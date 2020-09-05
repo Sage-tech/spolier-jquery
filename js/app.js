@@ -1,22 +1,23 @@
-// create the reveal splouer button
-const $button = $('<button>Reveal Spoiler</button>');
 
+    
+     
+    
+    //this is the same as event.target same as e and evt
 
-// append to web page
-$('.spolier').prepend($button);//or append
-
-
-// hide spolier text 
-$('.spoiler span').hide()
-
-// when the button is pressed
-$('.spolier button').click(function() {
-
-// show the spolier text
-$('.spoiler span').show();
+   
+      // When the button is pressed 
+$('.spoiler').on('click', 'button', function(){
+    //Show the spoiler text
+    $(this).prev().show();
+    //Hide the "Reveal Spoiler" button
+    $(this).hide();
+  });
   
-// hide the reveal spolier button 
-$('$spoiler button').hide();
-
-});
-
+  // Create the "Reveal Spoiler" button
+  const $button = $('<button>Reveal Spoiler</button>');
+  //Append to web page
+  $('.spoiler').append($button);
+  
+  //Hide the spoiler text
+  $('.spoiler span').hide();
+  
